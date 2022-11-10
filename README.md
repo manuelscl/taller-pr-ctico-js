@@ -1,2 +1,8 @@
-# taller-pr-ctico-js
-Proyectos del taller práctico de javascript: Matemáticas y Estadistica básica.
+# Taller práctico de Matemáticas con Javascript
+Ejercicios del taller-práctico-js.
+
+## Clases del curso
+- Fórmulas matemáticas básicas
+- Porcentajes y descuentos
+- Estadística básica
+- Análisis salarial
