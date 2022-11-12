@@ -35,6 +35,39 @@ function calcularTriangulo(lado1, lado2, base, altura) {
         area: (base * altura) / 2
     };
 }
+
+// Calcular la altura de un triángulo isóseles no equilátero
+// Necesitamos saber la medida de los 3 lados para calcular la altura
+function calcularAlturaTriangulo(lados, base) {
+    if (lados === base) {
+        console.warn("Este no es un triángulo isóseles")
+    } else {
+        // h = raizcuadrada((lados ** 2) - (b ** 2) /4)
+        return Math.sqrt((lados ** 2) - ( (base ** 2) /4));
+    }
+}
+
+
+function calcularTrianguloEscaleno(lado1, lado2, lado3) {
+    if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+        return false;
+      }
+      
+      const S = (lado1 + lado2 + lado3) / 2;
+      const S1 = S - lado1;
+      const S2 = S - lado2;
+      const S3 = S - lado3;
+    
+      const H = (2 / lado1) * Math.sqrt(S * S1 * S2 * S3);
+      const result = Math.floor(H);
+    
+      return result;
+}
+
+// ¿Cómo llegamos a esa fórmula? Con el Teorema de Pitágoras
+// El cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos
+// Hipotenusa: Es el lado del triángulo al frente del ángulo de 90 grados
+
 calcularTriangulo(12, 12, 4, 5.5);
 console.log({
     ladoTriangulo1,
