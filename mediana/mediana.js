@@ -7,7 +7,8 @@ function esPar(lista) {
 //     return lista.length % 2;
 // }
 
-function calcularMediana(lista) {
+function calcularMediana(listaDesordenada) {
+    const lista = ordenarLista(listaDesordenada);
     const listaEsPar = esPar(lista);
 
     if(listaEsPar) {
@@ -15,7 +16,6 @@ function calcularMediana(lista) {
         const indexMitad2ListaPar = lista.length / 2;
         // const mitad1ListaPar = lista[(lista.length / 2) - 1];
         // const mitad2ListaPar = lista[lista.length / 2];
-
         const listaMitades = [];
         listaMitades.push(lista[indexMitad1ListaPar]);
         listaMitades.push(lista[indexMitad2ListaPar]);
@@ -41,4 +41,21 @@ function calcularPromedio(lista) {
 
     console.log(promedio);
     return promedio;
+}
+
+function ordenarLista(listaDesordenada) {
+    function ordernarListaSort(valorAcumulado, valorNuevo) {
+        // if(valorAcumulado > valorNuevo) {
+        //     return 1;
+        // } else if(valorAcumulado == valorNuevo) {
+        //     return 0;
+        // } else if(valorAcumulado < valorNuevo) {
+        //     return -1;
+        // }
+        return valorAcumulado - valorNuevo;
+    }
+    const lista = listaDesordenada.sort(ordernarListaSort);
+    // const ordenarLista = lista.sort((a,b) => a - b);
+
+    return lista;
 }
